@@ -1,0 +1,4 @@
+com\example\demo\DemoApplication.class
+com\example\demo\models\Task.class
+com\example\demo\services\TaskService.class
+com\example\demo\repositories\TaskRepository.class
