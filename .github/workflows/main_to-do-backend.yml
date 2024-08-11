@@ -61,4 +61,4 @@ jobs:
         with:
           app-name: 'to-do-backend'
           slot-name: 'Production'
-          package: target/*.jar
+          package: '*.jar'
