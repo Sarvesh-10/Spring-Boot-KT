@@ -50,10 +50,15 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_784D581BECC0485A81ACF80C47941228 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_752645F9B3F44820A9D8EBBB30893169 }}
 
+      - name: Configure App Service
+        run: |
+          az webapp config set --resource-group to-do-backend_group --name to-do-backend --java-version 17
+          az webapp config set --resource-group to-do-backend_group --name to-do-backend --startup-file target/demo-0.0.1.jar
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'to-do-backend'
           slot-name: 'Production'
-          package: '*.jar'
+          package: target/*.jar
