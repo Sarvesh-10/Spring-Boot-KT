@@ -52,7 +52,7 @@ jobs:
 
       - name: Configure App Service
         run: |
-          az webapp config set --resource-group to-do-backend_group --name to-do-backend --java-version 17
+          az webapp config set --resource-group to-do-backend_group --name to-do-backend --java-version 11
           az webapp config set --resource-group to-do-backend_group --name to-do-backend --startup-file target/demo-0.0.1.jar
 
       - name: Deploy to Azure Web App
